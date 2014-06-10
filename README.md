@@ -38,9 +38,24 @@ And these in THUMBNAIL_PROCESSORS
     )
 
 Run the migrations
-    ./manage.py migrate filer
-    ./manage.py migrate cmsplugin_carousel
+
+    python manage.py migrate filer
+    python manage.py migrate cmsplugin_carousel
 
 And off you go...
 
-## Demo and development
+## Demo
+
+If you want to see what the carousel looks like, I have made it really easy for you.
+Open terminal and execute the following:
+
+    git clone https://github.com/MagicSolutions/cmsplugin-carousel &&
+    cd cmsplugin-carousel &&
+    mkvirtualenv cmsplugin_carousel_demo -a `pwd` &&
+    pip install -r example/requirements.txt &&
+    ./example/manage.py syncdb --all --noinput &&
+    ./example/manage.py migrate --fake &&
+    ./example/manage.py loaddata example/loaddata.json &&
+    ./example/manage.py runserver 0.0.0.0:8312
+
+After all is set and done, [click here to see the demo](http://localhost:8312)
