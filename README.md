@@ -5,7 +5,7 @@ This app needs:
 - [cmsplugin-filer](https://github.com/stefanfoulis/cmsplugin-filer)
 - [django-orderedmodel](https://github.com/MagicSolutions/django-orderedmodel)
 
-They should be automatically installed anyway, so no worries.
+They will be automatically installed so no worries.
 
 
 ## SetUp
@@ -51,11 +51,11 @@ Open terminal and execute the following:
 
     git clone https://github.com/MagicSolutions/cmsplugin-carousel &&
     cd cmsplugin-carousel &&
-    mkvirtualenv cmsplugin_carousel_demo -a `pwd` &&
+    mkvirtualenv -a `pwd` -p /usr/bin/python2.7 cmsplugin_carousel_demo &&
     pip install -r example/requirements.txt &&
     ./example/manage.py syncdb --all --noinput &&
     ./example/manage.py migrate --fake &&
     ./example/manage.py loaddata example/loaddata.json &&
     ./example/manage.py runserver 0.0.0.0:8312
 
-After all is set and done, [click here to see the demo](http://localhost:8312)
+After all is set and done, [http://localhost:8312](http://localhost:8312) should load the demo.

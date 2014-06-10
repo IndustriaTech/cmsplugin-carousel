@@ -1,7 +1,3 @@
-{% load staticfiles %}
-
-
-
 <div id="{{ auto_id }}" class="carousel slide" data-ride="carousel" data-interval="{{ rotate_interval }}">
   <ol class="carousel-indicators">
     {% for object in objects_list %}
@@ -12,7 +8,7 @@
     {% for object in objects_list %}
       <div class="item {% if forloop.first %}active{% endif %}">
         {% if object.link %}<a href="{{ object.link }}" {% if object.open_in_tab %}target="_blank"{% endif %}>{% endif %}
-        <img src="{{ object.image.url }}" alt="{{ object.alt_tag }}">
+        <img src="{{ object.image.url }}" alt="{% if object.alt_tag %}{{ object.alt_tag }}{% else %}{{ object.image.default_alt_text }}{% endif %}">
         {% if object.link %}</a>{% endif %}
         <div class="container">
           <div class="carousel-caption">

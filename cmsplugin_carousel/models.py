@@ -1,8 +1,9 @@
-from django.utils.translation import ugettext_lazy as _
 from django.db import models
+from django.utils.translation import ugettext_lazy as _
 
 from cms.models import CMSPlugin
 from cms.models.fields import PageField
+
 from filer.fields.image import FilerImageField
 from orderedmodel import OrderedModel
 
