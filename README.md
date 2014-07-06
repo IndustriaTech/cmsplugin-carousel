@@ -10,7 +10,10 @@ They will be automatically installed so no worries.
 
 ## SetUp
 
-    pip install git+git://github.com/MagicSolutions/cmsplugin-carousel.git
+    pip install git+git://github.com/MagicSolutions/cmsplugin-carousel.git --process-dependency-links
+    
+--process-dependency-links is added because of the django-orderedmodel package (it is good to be the one from the MagicSolution's organization)
+
 
 You should have these in installed apps:
 
