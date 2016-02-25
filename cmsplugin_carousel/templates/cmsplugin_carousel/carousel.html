@@ -7,7 +7,7 @@
   <div class="carousel-inner">
     {% for object in objects_list %}
       <div class="item {% if forloop.first %}active{% endif %}">
-        {% if object.link %}<a href="{{ object.link }}" {% if object.open_in_tab %}target="_blank"{% endif %}>{% endif %}
+        {% if object.link %}<a href="{{ object.link.get_public_url }}" {% if object.open_in_tab %}target="_blank"{% endif %}>{% endif %}
         <img src="{{ object.image.url }}" alt="{% if object.alt_tag %}{{ object.alt_tag }}{% else %}{{ object.image.default_alt_text }}{% endif %}">
         {% if object.link %}</a>{% endif %}
         <div class="container">
